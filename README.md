@@ -45,14 +45,16 @@ lists all shortcuts:
 
 ## Notes
 
-The compiler also allows type declarations before method names and argument names,
+* The compiler also allows type declarations before method names and argument names,
 which are simply deleted during preprocessing. For example:
+```
 #method bool hasprop(string property)
+```
 
-The compiler aborts if neither #super nor #nosuper is used in a constructor
+* The compiler aborts if neither #super nor #nosuper is used in a constructor
 of a class that has a parent class.
 
-A file can include multiple classes.
+* A file can include multiple classes.
 
 ## Example
 
