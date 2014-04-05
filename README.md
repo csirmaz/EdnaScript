@@ -9,9 +9,8 @@ EdnaScript into JavaScript (ECMAScript).
 
 EdnaScript is Copyright (C) 2014 Elod Csirmaz
 
-This Source Code Form is subject to the terms of the Mozilla Public
-License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at http://mozilla.org/MPL/2.0/.
+This program is free software; you may redistribute it and/or modify
+it under the terms of the MIT License.
 
 ## Usage
 
