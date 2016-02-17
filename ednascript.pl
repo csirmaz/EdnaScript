@@ -60,6 +60,8 @@ lists all shortcuts:
     #nosuper --- add this line if the super constructor should not be called automatically
   #-constructor --- end the constructor method
 
+  #classprop <PROPERTYNAME> = <JAVASCRIPT CODE>; --- adds properties to the class
+
   #method <METHODNAME>(arguments) --- begins a method
     <JAVASCRIPT CODE>
     #sup(...); --- calls the overridden method
@@ -189,6 +191,12 @@ while(<STDIN>){
          die "'$l' inside method '$method'" if $method;
          die "'$l' outside constructor" unless $constructor == 1;
          $supercalled = 2;
+      }
+      elsif($lstrip =~ /^#classprop\s+([^\s]+)\s*=\s*(.*)$/){
+         die "'$l' outside class" unless $class;
+         die "'$l' inside method '$method'" if $method;
+         die "'$l' before constructor" unless $constructor==2;
+         print $lindent.$class.'.prototype.'.$1.' = '.$2;
       }
       elsif($lstrip =~ /^#method\s+(?:[^\s]+\s+)?([^\s\(]+)\(([^\)]*)\)\s*$/){
          die "'$l' outside class" unless $class;
